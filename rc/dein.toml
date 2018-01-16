@@ -1,0 +1,20 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+hook_post_update = '''
+	if executable('gmake')
+		let cmd = 'gmake'
+	else
+		let cmd = 'make'
+	endif
+	let g:dein#plugin.build = cmd
+'''
+
+[[plugins]]
+repo = 'w0rp/ale'
+hook_post_source = '''
+	let g:ale_enabled=1
+'''
+
